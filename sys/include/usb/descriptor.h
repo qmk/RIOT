@@ -69,6 +69,14 @@ extern "C" {
 /** @} */
 
 /**
+ * @name USB Set feature attributes
+ * @anchor USB_FEATURE_ATTR
+ * @{
+ */
+#define USB_FEATURE_ATTR_REM_WAKEUP             0x01    /**< Remote wake-up flag       */
+/** @} */
+
+/**
  * @name USB setup packet requests types
  * @{
  */
