@@ -69,6 +69,15 @@ extern "C" {
 /** @} */
 
 /**
+ * @name USB Set feature types
+ * @anchor USB_DEV_FEATURE
+ * @{
+ */
+#define USB_DEV_FEATURE_REM_WAKEUP          0x01    /**< Remote wake-up flag       */
+#define USB_DEV_FEATURE_TEST_MODE           0x02    /**< TEST_MODE flag            */
+/** @} */
+
+/**
  * @name USB setup packet requests types
  * @{
  */
