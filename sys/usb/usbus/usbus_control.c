@@ -224,6 +224,24 @@ static int _recv_dev_setup(usbus_t *usbus, usb_setup_t *pkt)
                 _activate_endpoints(usbus);
                 res = 1;
                 break;
+            case USB_SETUP_REQ_CLEAR_FEATURE:
+                if (CONFIG_USB_REM_WAKEUP) {
+                    if (pkt->value == USB_DEV_FEATURE_REM_WAKEUP) {
+                        /* TODO: handle request "correctly"
+                         * For now ACK as STALL causes issues with hubs */
+                        res = 1;
+                    }
+                }
+                break;
+            case USB_SETUP_REQ_SET_FEATURE:
+                if (CONFIG_USB_REM_WAKEUP) {
+                    if (pkt->value == USB_DEV_FEATURE_REM_WAKEUP) {
+                        /* TODO: handle request "correctly"
+                         * For now ACK as STALL causes issues with hubs */
+                        res = 1;
+                    }
+                }
+                break;
             default:
                 DEBUG("usbus: Unknown write request %u\n", pkt->request);
                 break;
